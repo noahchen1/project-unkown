@@ -43,10 +43,12 @@ const Register = () => {
     }, [pwd, matchPwd]);
 
     const handleSubmit = e => {
-        e.prevenDefault();
+        e.preventDefault();
 
         setSuccess(true);
     };
+
+    console.log(sucess)
 
     return (
         <div id="register-form-container">
@@ -101,7 +103,7 @@ const Register = () => {
                 />
                 <p>Must match the first password!</p>
 
-                <button>Sign up</button>
+                <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign up</button>
             </form>
         </div>
 
